@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Increasing and Decreasing Image Size</title>
+<style>
+    body{
+        background-color:whitesmoke;
+    }
+    button{
+        padding: 3px 6px;
+        margin: 15px;
+    
+        
+    }
+    .buttons{
+        margin-left: 40%;
+        
+    }
+    #sky{
+      margin-left: 40%;
+    }
+</style>
+<script>
+    function zoomin(){
+        var myImg = document.getElementById("sky");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 500){
+            alert("Maximum zoom-in level reached.");
+        } else{
+            myImg.style.width = (currWidth + 50) + "px";
+        } 
+    }
+    function zoomout(){
+        var myImg = document.getElementById("sky");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 50){
+            alert("Maximum zoom-out level reached.");
+        } else{
+            myImg.style.width = (currWidth - 50) + "px";
+        }
+    }
+</script>
+</head>
+<body>
+    <p class="buttons">  
+        <button type="button" onclick="zoomin()"><img src="/examples/images/zoom-in.png"> Zoom In</button>
+        <button type="button" onclick="zoomout()"><img src="/examples/images/zoom-out.png"> Zoom Out</button>
+    </p>
+    <img src="depositphotos_29460297-stock-photo-bird-cage.jpg" id="sky" width="250" alt="Cloudy Sky">
+</body>
+</html>
